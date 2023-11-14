@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e187d73-0990-4bb4-be85-e520eb0e0047" name="Changes" comment="added code from unit 2.4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5e187d73-0990-4bb4-be85-e520eb0e0047" name="Changes" comment="added code from exercise 5">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/tgbot.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tgbot.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +98,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add code from week 1" />
     <MESSAGE value="added code from unit 2.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code from unit 2.4" />
+    <MESSAGE value="added code from exercise 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="added code from exercise 5" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
