@@ -62,7 +62,7 @@ This project uses a Makefile for common tasks. Run the following commands:
 - Lint Code: `make lint`
 - Run Tests: `make test`
 - Get Dependencies: `make get`
-- Build Application: `make build` (Override `REGISTRY`, `TARGETOS` and `ARCH` with `make build REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
-- Create Docker Image: `make image` (Override `REGISTRY`, `TARGETOS` and `ARCH` with `make image REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
-- Push Docker Image: `make push` (Override `REGISTRY`, `TARGETOS` and `ARCH` with `make push REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
+- Build Application: `make build` (Override `REGISTRY`, `TARGETOS` and `TARGETARCH` with `make build REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
+- Create Docker Image: `make image` (Override `REGISTRY`, `TARGETOS` and `TARGETARCH` with `make image REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
+- Push Docker Image: `make push` (Override `REGISTRY`, `TARGETOS` and `TARGETARCH` with `make push REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
 - Clean: `make clean`
