@@ -3,8 +3,8 @@ FROM quay.io/projectquay/golang:1.20 as builder
 WORKDIR /go/src/app
 COPY . .
 
-ARG TARGETOS
-ARG TARGETARCH
+ARG TARGETOS=windows
+ARG TARGETARCH=amd64
 
 RUN make build TARGETOS=${TARGETOS} TARGETARCH=${TARGETARCH}
 
