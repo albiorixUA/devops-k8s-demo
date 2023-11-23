@@ -20,7 +20,7 @@ build: format get
 	CGO_ENABLED=0  GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o tgbot -ldflags "-X="github.com/albiorixUA/devops-k8s-demo/cmd.appVersion=${VERSION}
 
 image:
-	docker build --target=${TARGETOS} --build-arg TARGETOS=${TARGETOS} --build-arg TARGETARCH=${TARGETARCH} . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+	docker build --target=${TARGETOS} --build-arg TARGETOS=${TARGETOS} --build-arg TARGETARCH=${TARGETARCH} -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} .
 
 push:
 	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
