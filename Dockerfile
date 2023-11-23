@@ -8,9 +8,21 @@ ARG TARGETARCH=amd64
 
 RUN make build TARGETOS=${TARGETOS} TARGETARCH=${TARGETARCH}
 
-FROM scratch
+FROM scratch as linux
 WORKDIR /
-COPY --from=builder /go/src/app/tgbot .
-COPY --from=alpine:latest /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-ENTRYPOINT ["./tgbot"]
+COPY --from=builder /go/src/app/bin/* .
+COPY --from=alpine:latest /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs
+ENTRYPOINT [ "./tgbot" ]
+
+FROM scratch as windows
+WORKDIR /
+COPY --from=builder /go/src/app/bin/* .
+COPY --from=alpine:latest /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs
+ENTRYPOINT [ "./tgbot.exe" ]
+
+FROM scratch as darwin
+WORKDIR /
+COPY --from=builder /go/src/app/bin/* .
+COPY --from=alpine:latest /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs
+ENTRYPOINT [ "./tgbot" ]
 
