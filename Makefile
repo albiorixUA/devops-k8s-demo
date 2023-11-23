@@ -27,4 +27,4 @@ push:
 
 clean:
 	rm -rf tgbot
-	docker rmi $(shell docker images -a -q)
+	docker rmi -f $(shell docker images -a -q)
