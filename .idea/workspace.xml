@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e187d73-0990-4bb4-be85-e520eb0e0047" name="Changes" comment="updated makefile and dockerfile">
-      <change afterPath="$PROJECT_DIR$/doc/poc.MD" afterDir="false" />
+    <list default="true" id="5e187d73-0990-4bb4-be85-e520eb0e0047" name="Changes" comment="added POC.md">
+      <change afterPath="$PROJECT_DIR$/doc/MVP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/mvp.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/result.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/sync argo_cd.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +73,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Max\GolandProjects\awesomeProject\doc" />
       <recent name="C:\Users\Max\GolandProjects\awesomeProject\html" />
     </key>
   </component>
@@ -104,7 +108,8 @@
     <MESSAGE value="added code from 3w" />
     <MESSAGE value="updated README.md" />
     <MESSAGE value="updated makefile and dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated makefile and dockerfile" />
+    <MESSAGE value="added POC.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="added POC.md" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
