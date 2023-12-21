@@ -3,14 +3,12 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 image:
   repository: albiorixua
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.5-39e6b24"
+  tag: "v1.0.6-"
   arch: amd64
-
 secret:
   name: "tgbot"
   key: "token"
