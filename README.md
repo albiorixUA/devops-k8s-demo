@@ -67,7 +67,7 @@ This project uses a Makefile for common tasks. Run the following commands:
 - Push Docker Image: `make push` (Override `REGISTRY`, `TARGETOS` and `TARGETARCH` with `make push REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
 - Clean: `make clean`
 
-# Налаштування pre-commit хука з GitLeaks
+# Adding the pre-commit hook
 
 1. **Adding the pre-commit hook:**
    - Move the `pre-commit` file to the `.git/hooks/` folder:
@@ -82,7 +82,7 @@ This project uses a Makefile for common tasks. Run the following commands:
      ln -s pre-commit .git/hooks/pre-commit
      ```
 
-  - Ensure that the file has execute permissions:
+   - Ensure that the file has execute permissions:
 
      ```bash
      chmod +x pre-commit
