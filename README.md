@@ -66,3 +66,36 @@ This project uses a Makefile for common tasks. Run the following commands:
 - Create Docker Image: `make image` (Override `REGISTRY`, `TARGETOS` and `TARGETARCH` with `make image REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
 - Push Docker Image: `make push` (Override `REGISTRY`, `TARGETOS` and `TARGETARCH` with `make push REGISTRY=albiorixua TARGETOS=windows TARGETARCH=amd64`)
 - Clean: `make clean`
+
+# Налаштування pre-commit хука з GitLeaks
+
+1. **Adding the pre-commit hook:**
+   - Move the `pre-commit` file to the `.git/hooks/` folder:
+
+     ```bash
+     cp pre-commit .git/hooks/
+     ```
+
+   - Alternatively, create a symbolic link::
+
+     ```bash
+     ln -s pre-commit .git/hooks/pre-commit
+     ```
+
+  - Ensure that the file has execute permissions:
+
+     ```bash
+     chmod +x pre-commit
+     ```  
+
+3. **Activating GitLeaks:**
+   - Run the command to activate GitLeaks:
+
+     ```bash
+     git config hooks.gitleaks.enable true
+     ```
+
+4. **Commit attempt:**
+   - Now, with each commit attempt, your pre-commit script will check the code for the presence of sensitive information.
+
+   - If secrets are detected, the commit will be rejected, and you will receive an error message.
