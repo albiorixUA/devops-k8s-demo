@@ -4,7 +4,7 @@ DevOps application from scratch
 
 **TGBot** is a Telegram bot written in the Go programming language, utilizing the Cobra-CLI v1.8.0 framework for command handling and Telebot v3.1.4 for integration with the Telegram API.
 
-## Installation 
+## Installation  
 
 To get started with KBot, clone the repository:
 
