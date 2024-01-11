@@ -1,0 +1,67 @@
+#!/bin/bash
+
+OS="$(uname)"
+ARCH="$(uname -m)"
+
+if [ "$OS" == "Linux" ]; then
+    if [ "$ARCH" == "x86_64" ]; then
+        FILE="gitleaks_8.18.1_linux_x64.tar.gz"
+    elif [ "$ARCH" == "i386" ]; then
+        FILE="gitleaks_8.18.1_linux_x32.tar.gz"
+    elif [ "$ARCH" == "armv6l" ]; then
+        FILE="gitleaks_8.18.1_linux_armv6.tar.gz"
+    elif [ "$ARCH" == "armv7l" ]; then
+        FILE="gitleaks_8.18.1_linux_armv7.tar.gz"
+    elif [ "$ARCH" == "aarch64" ]; then
+        FILE="gitleaks_8.18.1_linux_arm64.tar.gz"
+    fi
+elif [ "$OS" == "Darwin" ]; then
+    if [ "$ARCH" == "x86_64" ]; then
+        FILE="gitleaks_8.18.1_darwin_x64.tar.gz"
+    elif [ "$ARCH" == "arm64" ]; then
+        FILE="gitleaks_8.18.1_darwin_arm64.tar.gz"
+    fi
+elif [ "$OS" == "Windows_NT" ]; then
+    if [ "$ARCH" == "x86" ]; then
+        FILE="gitleaks_8.18.1_windows_armv6.zip"
+    elif [ "$ARCH" == "x64" ]; then
+        FILE="gitleaks_8.18.1_windows_armv7.zip"
+    fi
+else
+    echo "Unsupported operating system"
+    exit 1
+fi
+
+mkdir -p ./bin/
+
+GITLEAKS_PATH="$(pwd)/bin/gitleaks"
+
+if [ ! -f "$GITLEAKS_PATH" ]; then
+    curl -LO https://github.com/gitleaks/gitleaks/releases/download/v8.18.1/$FILE
+
+    if [[ $FILE == *.tar.gz ]]; then
+        tar -xzf $FILE
+    elif [[ $FILE == *.zip ]]; then
+        unzip $FILE
+    fi
+
+    mv gitleaks ./bin/
+
+    rm $FILE 
+    rm LICENSE
+fi
+
+
+reject_commit() {
+    echo "Error: Secrets detected in the code. Commit rejected."
+    exit 1
+}
+
+if [[ "$(git config --get hooks.gitleaks.enable)" != "true" ]]; then
+    git config hooks.gitleaks.enable true
+    echo "GitLeaks enabled."
+fi
+
+$GITLEAKS_PATH detect --redact -v || reject_commit
+
+exit 0
