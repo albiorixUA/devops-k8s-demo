@@ -1,22 +1,21 @@
+name: My plan
+level: beginner
+update_id: 9972a5f7-5a58-4186-90ce-df7b03e5a60b
+author: Jit
+version: 0.1
 owners:
   default: null
-name: My plan
-author: Jit
+references:
+  - https://www.jit.io
+tags: []
 items:
-  - name: >
-      Establish a process to ensure that all required compliance standards are
-      met
-    uses: >-
-      jitsecurity-controls/jit-plans/items/regulatory_compliance_validation_process/item-regulatory-compliance-process.yml@latest
+  - name: Establish a process to ensure that all required compliance standards are met
+
+    uses: jitsecurity-controls/jit-plans/items/regulatory_compliance_validation_process/item-regulatory-compliance-process.yml@latest
     input:
       note: test2
       requirements:
         '1':
-          status: not_applicable
           note: test1
-level: beginner
-version: 0.1
-references:
-  - https://www.jit.io
-tags: []
-
+          status: not_applicable
+      status: null
