@@ -7,7 +7,7 @@ image:
   repository: albiorixua
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.6-2c0938a"
+  tag: "v1.0.6-8ca38db"
   arch: amd64
 secret:
   name: "tgbot"
